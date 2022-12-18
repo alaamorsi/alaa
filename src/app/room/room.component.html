@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/room">Rooms</a>
+      </li> 
+    </ul>
+    <input style="width: 500px; margin-left: 700px;" type="text"  [(ngModel)]="searchFilter" />
+  </div>
+</nav>
+<h3 style="color:red; margin-left: 30px;"><b>{{ScreenMessage}}</b></h3>
+<body>
+<div class="container">
+    <div class="row card-group">
+      <div class="col-3" *ngFor="let room of filteredRoomsbySearch">
+        <div class="card h-30">
+         <a [routerLink]=" ['/room',room._id]">
+          <img
+            class="card-img-top"
+            [src]="room.poster_path"
+            [title]="room.title"
+            alt="Card image cap"
+          /></a> 
+          <div class="card-body">
+            <h4 class="card-title">{{ room.title | lowercase }}</h4>
+            <h6 *ngIf="room.showDetail">Type : {{ room.typeRoom }} <br> Area : {{ room.area }}m <br>Price : {{ room.price | currency }} <br><br> Description <hr> {{room.overview}}</h6>
+            <button href="#" class="btn btn-primary" (click)="toggleDtails(room._id)" >
+              {{ room.showDetail ? "Hide" : "Show" }} Details
+            </button>
+            <app-reserve [Troom]="room.title"
+            (RoomMessage)="RoomClicked($event)"></app-reserve>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+  <app-footer></app-footer>

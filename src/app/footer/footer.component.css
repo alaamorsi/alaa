@@ -1,0 +1,55 @@
+.tm-footer{
+  background: black;
+ display: block;
+ padding: 0px;
+ position: relative;
+
+}
+
+.tm-us{
+ display: inline-table;
+ max-width: 30%;
+ width: 30%;
+ margin: 2% 0 2% 4%
+}
+
+.tm-address{
+ display: inline-table;
+ max-width: 30%;
+ width: 30%;
+  margin: 2% 0 2% 25%
+}
+
+.tm-us .bold, .tm-address .bold{
+ color: #ec3c6a;
+ font-size: 1.5vw;
+ font-weight: 700;
+ padding-bottom: 0%;
+}
+
+.tm-us p, .tm-address p{
+ color: #fff;
+ font-size: 1.4vw;
+}
+
+.tm-media{
+display: inline;
+ margin: 0 0 0 59%;
+
+
+}
+
+
+
+.tm-review:focus{
+ outline: none;
+}
+
+.tm-revcon:focus{
+ outline: none;
+}
+
+h2{
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
